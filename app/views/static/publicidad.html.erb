@@ -1,0 +1,261 @@
+<div class="container">
+  <h2>Consulta de Publicidad</h2>
+   
+  <button class="btn btn-default" data-toggle="modal" data-target="#registrar">Registrar</button>
+  <button class="btn btn-default" data-toggle="collapse" data-target="#buscar">Buscar</button>
+  <div id="buscar" class="collapse">
+    <br>
+    <input class="form-control" id="entrada" type="text" placeholder="Filtrar">
+  </div>
+  <br/>         
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Titulo</th>
+        <th>Fecha Inicio</th>
+        <th>Fecha Fin</th>
+        <th>Ubicación</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="buscar">
+      <tr>
+        <th>1</th>
+        <td>Producto A - Principal</td>
+        <td>01/04/2018</td>
+        <td>31/05/2018</td>
+        <td>Página Principal</td>
+        <td>
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Acción
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#" data-toggle="modal" data-target="#editar">Editar</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#eliminar">Eliminar</a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>2</th>
+        <td>Producto B - Cliente</td>
+        <td>01/04/2018</td>
+        <td>31/05/2018</td>
+        <td>Páginas del Cliente</td>
+        <td>
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Acción
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#" data-toggle="modal" data-target="#editar">Editar</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#eliminar">Eliminar</a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>3</th>
+        <td>Producto C - Dueño</td>
+        <td>01/04/2018</td>
+        <td>31/05/2018</td>
+        <td>Páginas del Dueño</td>
+        <td>
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Acción
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#" data-toggle="modal" data-target="#editar">Editar</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#eliminar">Eliminar</a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="6" style="text-align: center;">
+          <ul class="pagination">
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+          </ul>
+        </th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="editar" role="dialog">
+  <div class="modal-dialog modal-lg">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Editar Publicidad</h4>
+      </div>
+      <div class="modal-body">
+        <form action="#">
+          <div class="form-group">
+            <label for="title">Título:</label>
+            <input type="text" class="form-control" id="title">
+          </div>
+          <div class="form-group">
+            <label for="contenido">Contenido:</label>
+            <textarea class="form-control" id="contenido" rows="3"></textarea>
+          </div>
+          <div class="row">
+              <div class='col-sm-6'>
+                  <div class="form-group">
+                    <label for="datetimepicker1">Fecha Inicio:</label>
+                      <div class='input-group date' id='datetimepicker1'>
+                          <input type='text' class="form-control" />
+                          <span class="input-group-addon">
+                              <span class="glyphicon glyphicon-calendar"></span>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+              <div class='col-sm-6'>
+                  <div class="form-group">
+                    <label for="datetimepicker2">Fecha Fin:</label>
+                      <div class='input-group date' id='datetimepicker2'>
+                          <input type='text' class="form-control" />
+                          <span class="input-group-addon">
+                              <span class="glyphicon glyphicon-calendar"></span>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-8">
+              <label for="ubicacion">Ubicación:</label>
+              <select class="form-control" id="ubicacion">
+                <option>Página Principal</option>
+                <option>Página de Clientes</option>
+                <option>Página de Dueños</option>
+              </select>
+            </div>
+          </div>
+          <div class="row text-center">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+            <button type="button" class="btn btn-secundary" data-dismiss="modal">Cancelar</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+    
+  </div>
+</div>
+<div class="modal fade" id="registrar" role="dialog">
+  <div class="modal-dialog modal-lg">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Registrar Publicidad</h4>
+      </div>
+      <div class="modal-body">
+        <form action="#">
+          <div class="form-group">
+            <label for="title">Título:</label>
+            <input type="text" class="form-control" id="title">
+          </div>
+          <div class="form-group">
+            <label for="contenido">Contenido:</label>
+            <textarea class="form-control" id="contenido" rows="3"></textarea>
+          </div>
+          <div class="row">
+              <div class='col-sm-6'>
+                  <div class="form-group">
+                    <label for="datetimepicker1">Fecha Inicio:</label>
+                      <div class='input-group date' id='datetimepicker1'>
+                          <input type='text' class="form-control" />
+                          <span class="input-group-addon">
+                              <span class="glyphicon glyphicon-calendar"></span>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+              <div class='col-sm-6'>
+                  <div class="form-group">
+                    <label for="datetimepicker2">Fecha Fin:</label>
+                      <div class='input-group date' id='datetimepicker2'>
+                          <input type='text' class="form-control" />
+                          <span class="input-group-addon">
+                              <span class="glyphicon glyphicon-calendar"></span>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-8">
+              <label for="ubicacion">Ubicación:</label>
+              <select class="form-control" id="ubicacion">
+                <option>Página Principal</option>
+                <option>Página de Clientes</option>
+                <option>Página de Dueños</option>
+              </select>
+            </div>
+          </div>
+          <div class="row text-center">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+            <button type="button" class="btn btn-secundary" data-dismiss="modal">Cancelar</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+    
+  </div>
+</div>
+<div class="modal fade" id="eliminar" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Eliminar Publicidad</h4>
+      </div>
+      <div class="modal-body">
+        <form action="#">
+          <p>Eliminar la Publicidad seleccionada?</p>
+          <div class="row text-center">
+            <button type="submit" class="btn btn-primary" >Eliminar</button>
+            <button type="button" class="btn btn-secundary" data-dismiss="modal">Cancelar</button>
+          </div>
+        </form>        
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+    
+  </div>
+</div>
+<script>
+$(document).ready(function(){
+  $("#entrada").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#buscar tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+    });
+    $(function () {
+        $('#datetimepicker2').datetimepicker();
+    });
+</script>

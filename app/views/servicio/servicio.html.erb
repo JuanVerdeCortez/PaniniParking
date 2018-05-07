@@ -1,0 +1,95 @@
+<section class="content-header">
+    <h1>
+        Consulta de Servicios Adicionales
+    </h1>
+</section>
+<section class="content">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+           <%= form_tag :servicio, method: :get do %>
+            <div class="box box-primary">
+               
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form role="form">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="box-body">
+                                <div class="form-inline">
+                                    <label for="tipoServicio">Tipo de Servicio</label>
+                                    <%= select_tag :f_tipo_servicio_cod, options_from_collection_for_select(TipoServicio.all, :id, :descripcion, params[:f_tipo_servicio_cod]), prompt: "-- TODOS --", class: "form-control", style: "width 250px" %>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-md-4">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label>Descripcion</label>
+                                    <%= text_field_tag :f_descripcion, params[:f_descripcion], placeholder: "Ingrese una descripcion", style: "width: 350px", class: "form-control"  %>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <br/>
+                                    <%= submit_tag "Buscar", name: nil, class: "btn btn-primary btn-md" %>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col-md-2">
+                            <div class="box-body">
+                                <div class="form-group">
+                                      <%= link_to '<button type="submit" class="btn btn-primary">Nuevo</button>'.html_safe, controller: "servicio", action: "nuevo_servicio"  %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </form>
+            </div>
+            <!-- /.box -->
+            <% end %>
+        </div>
+        <!--/.col (left) -->
+
+    </div>
+    <div class="card">
+         
+        <div class="box-header with-border">
+                    <h3 class="box-title">Resultados de Búsqueda</h3>
+           </div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th  >Editar</th>
+                                <th  >Tipo de Servicio</th>
+                                <th  >Descripción</th>
+                                <th  >Tarifa</th>
+                                <th  >Estacionamiento</th>
+                                <th  >Eliminar</th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                            <% @servicio.each do |servicio| %>
+                            <tr>
+                                <td class="filterable-cell"><%= link_to '<button type="submit"><img src="/assets/editar.jpg"/></button>'.html_safe, controller: "servicio", action: "editar_servicio", :id => servicio.id %></td>
+                                <td class="filterable-cell" ><%= servicio.tipo_servicio_cod %></td> 
+                                <td class="filterable-cell" ><%= servicio.descripcion %></td>
+                                <td  class="filterable-cell" ><b>S/.</b><%= servicio.tarifa %></td>
+                                <td  class="filterable-cell" ><%= servicio.estacionamiento_cod %></td>
+                                <td  class="filterable-cell" ><%= link_to '<button type="submit"><img src="/assets/eliminar.jpg"/></button>'.html_safe, { :action => :eliminar_servicio, :id => servicio.id }, :data => { :confirm => 'Estas seguro?' } %></td>
+                            </tr>
+                            <% end %>
+                            
+                        </tbody>
+                    </table>
+            </div>
+
+    
+</section>

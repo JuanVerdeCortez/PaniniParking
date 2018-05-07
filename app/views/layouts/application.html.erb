@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Panini Parking</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+      <%= stylesheet_link_tag href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
+  </head>
+  
+  <body class="fixed skin-yellow-light">
+  <div class="wrapper">
+      <%= render 'layouts/navigation/header'%>
+      <%= render 'layouts/navigation/sidebar'%>
+      <br></br>
+      <div class="content-wrapper">
+        <%= yield %>
+      </div>
+      <%= render 'layouts/navigation/footer' %>
+    </div>
+  </body>
+</html>

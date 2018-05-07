@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipo_servicio_cod: 1
+  descripcion: MyString
+  tarifa: 9.99
+  estacionamiento_cod: 1
+
+two:
+  tipo_servicio_cod: 1
+  descripcion: MyString
+  tarifa: 9.99
+  estacionamiento_cod: 1

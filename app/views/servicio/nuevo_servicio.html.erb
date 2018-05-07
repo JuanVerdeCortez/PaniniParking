@@ -1,0 +1,62 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ </head>
+ <div class="panel-group">
+  <div class="panel panel-info"> 
+  <div class="panel panel-heading">Registro de Servicio</div>
+  
+<div class="panel-body form-horizontal">
+  <%= form_for :servicio, :url => { :action => :create }  do |f| %>
+    <div class="form-group">
+   
+<% if @servicio.errors.any? %>
+  <div id="errorExplanation">
+    <br ><%= pluralize(@servicio.errors.count, "error") %>: Revisar las validaciones</br>
+    <ul>
+    <% @servicio.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+      <div class="col-sm-10">
+        <%= f.label :tipo_servicio_cod , "Tipo de Servicio", class: "control-label col-sm-2"%>
+        <%= f.select(:tipo_servicio_cod, options_from_collection_for_select(TipoServicio.all, :id, :descripcion),{}, {class: "form-control col-sm-2",style: "width: 250px"}) %>
+      </div>
+
+      <div class="col-sm-10">
+        <%= f.label :descripcion , "Descripcion del Servicio", class: "control-label col-sm-2"%>
+        <%= f.text_field :descripcion, class: "form-control", placeholder: "Ingrese una descripcion", style: "width: 250px"  %>
+      </div>
+
+      <div class="col-sm-10">
+        <%= f.label :tarifa , "Tarifa", class: "control-label col-sm-2"%>
+        <%= f.text_field :tarifa, class: "form-control", placeholder: "0.00", style: "width: 100px"  %>
+      </div>       
+     <div class="col-sm-10">
+        <%= f.label :estacionamiento_cod , "Estacionamiento", class: "control-label col-sm-2"%>
+        <%= f.select(:estacionamiento_cod, options_from_collection_for_select(Estacionamiento.all, :id, :nombre),{},{class: "form-control col-sm-2", style: "width: 250px"}) %>
+
+
+      </div>
+       <div>
+       <div class="col-sm-2"></div>
+       <div class="col-sm-10">
+         <%= f.submit :Guardar, class: "btn btn-primary" , data: { confirm: '¿Esta seguro de guardar el registro?' }%>
+         <a href="/servicio">
+      <button type="Regresar" class="btn btn-primary">Cancelar</button>
+      </a>
+       </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+ </div>
+</div>
+
+ 
+</div>

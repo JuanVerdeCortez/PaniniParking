@@ -1,0 +1,2 @@
+class TipoServicioController < ApplicationController
+end

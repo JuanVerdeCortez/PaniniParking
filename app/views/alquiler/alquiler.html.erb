@@ -1,0 +1,95 @@
+<section class="content-header">
+    <h1>
+        Consulta de Alquiler de Estacionamientos
+    </h1>
+</section>
+<section class="content">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+              <%= form_tag :alquiler, method: :get do %>
+            <div class="box box-primary">
+               
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form role="form">
+                    <div class="row">
+                        
+                     <div class="col-md-2">
+                            <div class="box-body">
+                                <div class="form-inline">
+                                    <label for="f_fin">Fecha Fin</label>
+                                    <%= text_field_tag :f_fin, params[:f_fin], type: "date", class: "form-control"  %>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-md-6">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="f_estacionamiento">Estacionamiento</label>
+                                   
+                                      <%= select_tag :f_estacionamiento_cod, options_from_collection_for_select(Estacionamiento.all, :id, :nombre, params[:f_estacionamiento_cod]), prompt: "-- TODOS --", class: "form-control", style: "width 250px" %>
+                                </div>
+                            </div>
+                        </div>
+                          <div class="col-md-2">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <br/>
+                                    <%= submit_tag "Buscar", name: nil, class: "btn btn-primary btn-md" %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col-md-2">
+                            <div class="box-body">
+                                <div class="form-group">
+                           <div class="form-group">
+                                      <%= link_to '<button type="submit" class="btn btn-primary">Nuevo</button>'.html_safe, controller: "alquiler", action: "nuevo_alquiler"  %>
+                                </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </form>
+            </div>
+            <% end %>
+        </div>
+        <!--/.col (left) -->
+
+    </div>
+
+     <div class="card">
+        <div class="box-header with-border">
+             <h3 class="box-title">Resultados de Búsqueda</h3>
+         </div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th  >Editar</th>
+                                <th>Fecha de Inicio</th>
+                                <th>Fecha Fin</th>
+                                <th>Estacionamiento</th>
+                                <th>Servicio Adicional</th>
+                                <th  >Eliminar</th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                            <% @alquiler.each do |alquiler| %>
+                            <tr>
+                                <td class="filterable-cell"><%= link_to '<button type="submit"><img src="/assets/editar.jpg"/></button>'.html_safe, controller: "alquiler", action: "editar_alquiler", :id => alquiler.id %></td>
+                                <td class="filterable-cell" ><%= alquiler.fecha_inicio %></td> 
+                                <td class="filterable-cell" ><%= alquiler.fecha_fin %></td>
+                                <td  class="filterable-cell" ><%= alquiler.estacionamiento_cod %></td>
+                                <td  class="filterable-cell" ><%= alquiler.servicio_adicional_cod %></td>
+                                <td  class="filterable-cell" ><%= link_to '<button type="submit"><img src="/assets/eliminar.jpg"/></button>'.html_safe, { :action => :eliminar_alquiler, :id => alquiler.id }, :data => { :confirm => 'Estas seguro?' } %></td>
+                            </tr>
+                            <% end %>
+                            
+                        </tbody>
+                    </table>
+            </div>
+</section>

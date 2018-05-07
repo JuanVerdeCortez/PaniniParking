@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Panini Parking</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="wrapper">
+      <%= render 'layouts/navigation/header'%>
+      <%= render 'layouts/navigation/sidebar'%>
+      <div class="content-wrapper">
+        
+        <%= yield %>
+      </div>
+      <%= render 'layouts/navigation/footer' %>
+    </div>
+  </body>
+</html>

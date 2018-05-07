@@ -1,0 +1,26 @@
+ <% unless current_page?('/') %>    
+ <div class="main-sidebar">
+  <div class="sidebar">
+    <ul class="sidebar-menu">
+     <br></br>
+    </li>
+      <li >
+        <%= link_to "Inicio", controller: "static", action: "inicio" %>
+      </li>
+      <li >
+         <%= link_to "Estacionamiento", controller: "static", action: "estacionamiento" %>
+      </li>
+      <li >
+        <%= link_to "Alquiler", controller: "alquiler", action: "alquiler" %>
+      </li>
+        <li >
+         <%= link_to "Servicios", controller: "servicio", action: "servicio" %>
+      </li>
+         <li >
+         <%= link_to "Publicidad", controller: "static", action: "publicidad" %>
+      </li>
+    </ul>
+  </div>
+</div>
+ 
+<% end %>

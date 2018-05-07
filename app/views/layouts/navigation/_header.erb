@@ -1,0 +1,13 @@
+ <% unless current_page?('/') %>
+<header class="main-header">
+<div  style="height: 70px;"><%= image_tag "Logo_PaniniParking.jpg", html: { alt: "Logo_PaniniParking" } %></div>
+          <p class="user-footer">
+             <div class="pull-right">
+                <a class="btn btn-default btn-flat" href="/"> Cerrar Sesión</a>
+              </div>
+              <div class="pull-right">
+                <a class="btn btn-default btn-flat" href="/registro"> Perfil</a>
+              </div>
+            </p>
+</header>
+ <% end %>

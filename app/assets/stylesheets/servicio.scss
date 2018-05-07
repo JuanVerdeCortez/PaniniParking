@@ -1,0 +1,38 @@
+// Place all the styles related to the servicio controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table {
+        width: 100%;
+    }
+
+thead, tbody, tr, td, th { display: block; }
+
+tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+thead th {
+    height: 40px;
+
+    /*text-align: left;*/
+}
+
+tbody {
+    height: 240px;
+    overflow-y: auto;
+}
+
+thead {
+	background-color: #FFA138;
+    /* fallback */
+}
+
+
+tbody td, thead th {
+    width: 16.6%;
+    float: left;
+}

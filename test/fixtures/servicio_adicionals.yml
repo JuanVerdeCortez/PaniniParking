@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigo: 
+  estacionamiento_cod: 
+  tipo_servicio_adicional_cod: 
+
+two:
+  codigo: 
+  estacionamiento_cod: 
+  tipo_servicio_adicional_cod: 

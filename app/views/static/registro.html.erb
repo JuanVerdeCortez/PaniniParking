@@ -1,0 +1,82 @@
+<head>
+	
+</head>
+<body>
+	<!DOCTYPE html>
+ 
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Registro de datos</h2>
+  <form class="form-group" >
+    <div class="col-xs-4">
+      <label for="nombres">Nombres:</label>
+      <input type="text" class="form-control" id="nombres" placeholder="Ingrese sus nombres" name="nombres">
+      <label for="apepat">Apellido Paterno:</label>
+      <input type="text" class="form-control" id="apepat" placeholder="Ingrese Apellido Paterno" name="apepat">
+       <label for="apemat">Apellido Materno:</label>
+      <input type="text" class="form-control" id="apemat" placeholder="Ingrese Apellido Materno" name="apemat">
+       <label for="sexo">Sexo:</label>
+  	<select class="form-control" id="sexo">
+    <option>Masculino</option>
+    <option>Femenino</option>
+    <option>Otro</option>
+  </select>
+   
+      <label for="ce">Correo Electronico:</label>
+       <input type="email" class="form-control" id="email" placeholder="email@upc.edu.pe" name="ce">
+      <label for="cce">Confirmar Correo Electronico:</label>
+       <input type="email" class="form-control" id="email" placeholder="email@upc.edu.pe" name="cce">
+ 
+      <label for="tdoc">Tipo de Documento</label>
+       <select class="form-control" id="tdoc">
+    <option>DNI</option>
+    <option>Pasaporte</option>
+    <option>Carnet de Extranjeria</option>
+  </select>
+   <label for="dist">Distrito:</label>
+      <input type="text" class="form-control" id="dist" placeholder="Ingrese Distrito" name="dist">
+     </div>
+     <div class="col-xs-4">
+     	 <label for="ndi">Numero de documento de Identidad: </label>
+      <input type="text" class="form-control" id="ndi" placeholder="Ingrese Numero de documento de Identidad" name="ndi">
+       <label for="optUsu">Tipo de Usuario: </label>
+     <div class="radio">
+  <label><input type="radio" name="optProp">Propietario</label>
+  </div>
+  <div class="radio">
+  <label><input type="radio" name="optCliente">Cliente</label>
+  
+ 	</div>
+
+  	<label for="contrasenia">Contraseña:</label>
+       <input type="password" class="form-control" id="contrasenia" placeholder="email@upc.edu.pe" name="contrasenia">
+      <label for="ccontrasenia">Confirmar Contraseña:</label>
+       <input type="password" class="form-control" id="ccontrasenia" placeholder="email@upc.edu.pe" name="ccontrasenia">
+    <label for="fnacimiento">Fecha de nacimiento:</label>
+    <input type="date" name="fnacimiento" class="form-control">
+    <label for="celular">Celular:</label>
+      <input type="text" class="form-control" id="celular" placeholder="000000000" name="celular" >
+      <label for="dire">Direccion: </label>
+      <input type="text" class="form-control" id="dire" placeholder="Ingrese Direccion" name="dire">
+     </div>
+      
+  </form>
+</div>
+
+<div class="container" style="align-self: right"></div>
+      <button type="Guardar" class="btn btn-primary">Guardar</button>
+</body>
+ 
+ 
+ 
+
+ 

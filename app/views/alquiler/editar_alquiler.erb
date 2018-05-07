@@ -1,0 +1,58 @@
+ <div class="panel-group">
+  <div class="panel panel-info"> 
+  <div class="panel panel-heading">Edicion de alquiler</div>
+  
+<div class="panel-body form-horizontal">
+  <%= form_for :alquiler, :url => { :action => :update }  do |f| %>
+
+  <% if @alquiler.errors.any? %>
+  <div id="errorExplanation">
+    <br ><%= pluralize(@alquiler.errors.count, "error") %>: Revisar las validaciones</br>
+    <ul>
+    <% @alquiler.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+    <div class="form-group">
+      <div class="col-sm-12">
+        <%= f.label :estacionamiento_cod, "Estacionamiento", class: "control-label col-sm-2"%>
+
+        <%= f.select(:estacionamiento_cod, options_from_collection_for_select(Estacionamiento.all, :id, :nombre,@estacionamiento.id),{},{class: "form-control col-sm-2", style: "width: 250px"}) %>
+      </div>
+
+      <div class="col-sm-12">
+        <%= f.label :fecha_inicio, "Fecha Inicio S.", class: "control-label col-sm-2"%>
+        <%= f.text_field :fecha_inicio, class: "form-control", type: "date",start_year: 1990, style: "width: 250px" %>
+      </div>
+     
+      <div class="col-sm-12">
+        <%= f.label :fecha_fin, "Fecha Fin S.", class: "control-label col-sm-2"%>
+        <%= f.text_field :fecha_fin, class: "form-control", type: "date",start_year: 1990, style: "width: 250px" %>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <%= f.label :servicio_adicional_cod, "Servicio Adicional", class: "control-label col-sm-2"%> 
+       <input type="checkbox" value="" onclick="servicio_adicional_cod.disabled = !this.checked" name="Servicio Adicional">
+         <%= f.select(:servicio_adicional_cod, options_from_collection_for_select(Servicio.all, :id, :descripcion,@servicioAdicional.id),{},{class: "form-control col-sm-2", style: "width: 250px"}) %>
+      </div>
+      <br ></br>
+      <div>
+       <div class="col-sm-2"></div>
+       <div class="col-sm-12">
+         <%= f.submit :Guardar, class: "btn btn-primary" , data: { confirm: '¿Esta seguro de guardar el registro?' }%>
+         <a href="/alquiler">
+      <button type="Regresar" class="btn btn-primary">Cancelar</button>
+      </a>
+       </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+ </div>
+</div>
+
+ 
+</div>
